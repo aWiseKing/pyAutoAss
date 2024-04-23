@@ -11,6 +11,9 @@
 
 更新
 ----
+- 1.0.6.2
+    1. 优化屏幕截图位图创建逻辑，修复当副显示器在主显示器左上时无法截取到的问题。
+
 - 1.0.6.1
     1. 修改AutoOperation类方法wait，提供等待任意键按下效果。
     #. 新增AutoOperation类属性kl,ml。实例化KeyboardListening,MouseListening对象。。

@@ -1,7 +1,7 @@
 """
     name: pyautoAss
     author: awiseking
-    version: 1.0.5.5
+    version: 1.0.6.2
     des: 基于键鼠、图片定位的自动化gui工作套件。
         
 """
@@ -12,7 +12,7 @@ from .pyAutoMouse import PyAutoMouse
 from .pyAutoGui import PyAutoGui
 from .Listening import KeyboardListening,MouseListening
 
-__version__ = "1.0.6.1"
+__version__ = "1.0.6.2"
 
 class AutoOperation(PyAutoKeyboard,PyAutoMouse,PyAutoGui):
 

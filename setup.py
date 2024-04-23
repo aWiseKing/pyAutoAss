@@ -3,7 +3,7 @@ with open("README.rst", "r",encoding="utf-8") as f:
   long_description = f.read()
 setuptools.setup(
     name='pyautoass',
-    version='1.0.6.1',
+    version='1.0.6.2',
     description='基于键鼠、图片定位的自动化gui工作套件。',
     author='awise',
     long_description=long_description,

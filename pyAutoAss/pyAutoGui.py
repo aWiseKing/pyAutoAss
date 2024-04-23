@@ -2,8 +2,18 @@ import win32gui,win32api,win32con,win32ui
 import cv2 as cv
 
 class PyAutoGui:
-    def __init__(self):
-        ...
+    
+    # 获取显示器在虚拟屏幕左上定位
+    def getMonitorRect(self):
+        display_infos = win32api.EnumDisplayMonitors(None, None)
+        x = 0
+        y = 0
+        for info in display_infos:
+            if info[2][0] < x:
+                x = info[2][0]
+            if info[2][1] < y:
+                y = info[2][1]
+        return (x,y)
 
     # 截屏并保存到文件
     def screenShotSaveFile(self,file_path:str="./screenshot.png"):
@@ -35,7 +45,7 @@ class PyAutoGui:
         screenshot.CreateCompatibleBitmap(img_dc,hd_width,hd_height)
         mem_dc.SelectObject(screenshot)
         # 截图保存到内存设备描述表
-        mem_dc.BitBlt((0,0),(hd_width,hd_height),img_dc,(0,0),win32con.SRCCOPY)
+        mem_dc.BitBlt((0,0),(hd_width,hd_height),img_dc,getMonitorRect(),win32con.SRCCOPY)
         # 保存位图到文件
         screenshot.SaveBitmapFile(mem_dc,file_path)
         # 释放内存
