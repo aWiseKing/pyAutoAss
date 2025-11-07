@@ -45,7 +45,7 @@ class PyAutoGui:
         screenshot.CreateCompatibleBitmap(img_dc,hd_width,hd_height)
         mem_dc.SelectObject(screenshot)
         # 截图保存到内存设备描述表
-        mem_dc.BitBlt((0,0),(hd_width,hd_height),img_dc,getMonitorRect(),win32con.SRCCOPY)
+        mem_dc.BitBlt((0,0),(hd_width,hd_height),img_dc,self.getMonitorRect(),win32con.SRCCOPY)
         # 保存位图到文件
         screenshot.SaveBitmapFile(mem_dc,file_path)
         # 释放内存
