@@ -140,6 +140,8 @@ Usage Examples
 
 更新日志 / Update Log
 ---------------------
+- 1.0.6.4
+    1. 调整pyAutoGui截图设计。
 - 1.0.6.3
     1. 修复pyAutoGui截图错误。
 - 1.0.6.2
