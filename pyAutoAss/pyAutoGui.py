@@ -28,7 +28,7 @@ class PyAutoGui:
         hd_width = win32api.GetSystemMetrics(win32con.SM_CXVIRTUALSCREEN)
         hd_height = win32api.GetSystemMetrics(win32con.SM_CYVIRTUALSCREEN)
         # 创建设备描述表（使用 CreateDC 而非 GetWindowDC，避免 ReleaseDC/DeleteDC 冲突）
-        desktop_dc = win32gui.CreateDC("DISPLAY", None, None, None)
+        desktop_dc = win32gui.CreateDC("DISPLAY", None, None)
         img_dc = win32ui.CreateDCFromHandle(desktop_dc)
         # 创建内存设备描述表
         mem_dc = img_dc.CreateCompatibleDC()
